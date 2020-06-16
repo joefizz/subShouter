@@ -2,4 +2,5 @@ amass_config.ini
 subConfig.ini
 programs/*
 programs.txt
+resolvers.txt
 25resolvers.txt
