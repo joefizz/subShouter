@@ -124,7 +124,5 @@ if sys.argv[1] == "list":
 
 if sys.argv[1] == "dns":
     print("Updating resolvers")
-    p = open(resolvers, 'w')
-    for r in os.system('curl '+source+' -s | sort -R | tail -n 25'):
-        p.write(r)
+    for r in os.system('curl '+source+' -s | sort -R | tail -n 25 > ./resolvers.txt'):
     exit()
