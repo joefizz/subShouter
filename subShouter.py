@@ -25,9 +25,6 @@ resolvers = parser['files']['resolvers']
 # DNS updater settings
 source = parser['DNS']['source']
 
-# use dnsvalidaator to create list of resolvers for amass - https://github.com/vortexau/dnsvalidator
-# /opt/dnsvalidator/dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o ./resolvers.txt && sort -R resolvers.txt | tail -n25 > 25resolvers.txt
-
 def subEnumerate(program):
     print("Updating resolvers")
     os.system('curl '+source+' -s | sort -R | tail -n 25 > ./resolvers.txt')
