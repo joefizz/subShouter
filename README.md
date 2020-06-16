@@ -1,11 +1,11 @@
 
 
-            _    ____  _                 _            
-  ___ _   _| |__/ ___|| |__   ___  _   _| |_ ___ _ __ 
- / __| | | | '_ \___ \| '_ \ / _ \| | | | __/ _ | '__|
- \__ | |_| | |_) ___) | | | | (_) | |_| | ||  __| |   
- |___/\__,_|_.__|____/|_| |_|\___/ \__,_|\__\___|_|   
-                                                      
+				            _    ____  _                 _            
+				  ___ _   _| |__/ ___|| |__   ___  _   _| |_ ___ _ __ 
+				 / __| | | | '_ \___ \| '_ \ / _ \| | | | __/ _ | '__|
+				 \__ | |_| | |_) ___) | | | | (_) | |_| | ||  __| |   
+				 |___/\__,_|_.__|____/|_| |_|\___/ \__,_|\__\___|_|   
+				                                                      
 
 This little script is basically a wrapper for amass.  It will run `amass enum` on all the root domains for your configured programs, followed by `amass track` to identify those subdomains that are new.  The new subdomains will then be emailed to you.
 
