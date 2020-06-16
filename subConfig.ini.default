@@ -1,4 +1,9 @@
-#Email settings
+# General settings
+[scan]
+# timeout in seconds for each program through amass
+timeout = 120
+
+# Email settings
 [email]
 port = 465
 password = Passowrd1
@@ -9,3 +14,7 @@ receiver_email = receiver@gmail.com
 [files]
 programs = ./programs.txt
 resolvers = ./25resolvers.txt
+
+# DNS updater
+[DNS]
+source = https://public-dns.info/nameserver/gb.txt

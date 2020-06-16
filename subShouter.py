@@ -7,6 +7,9 @@ from pathlib import Path
 
 parser = configparser.ConfigParser()
 parser.read('subConfig.ini')
+# General settings
+timeout = parser['scan']['timeout']
+
 
 
 # email settings
@@ -18,6 +21,9 @@ receiver_email = parser['email']['receiver_email']
 # local file settings
 programs = parser['files']['programs']
 resolvers = parser['files']['resolvers']
+
+# DNS updater settings
+source = parser['DNS']['source']
 
 # use dnsvalidaator to create list of resolvers for amass - https://github.com/vortexau/dnsvalidator
 # /opt/dnsvalidator/dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o ./resolvers.txt && sort -R resolvers.txt | tail -n25 > 25resolvers.txt
@@ -114,4 +120,11 @@ if sys.argv[1] == "list":
     p = open(programs)
     for program in p:
         print(program.strip('\n'))
+    exit()
+
+if sys.argv[1] == "dns":
+    print("Updating resolvers")
+    p = open(resolvers, 'w')
+    for r in os.system('curl '+source+' -s | sort -R | tail -n 25'):
+        p.write(r)
     exit()
