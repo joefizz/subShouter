@@ -8,9 +8,9 @@ amass has default resolvers but we can add more to speed up the process, before 
 
 Create Gmail account and enable insecure applications (https://myaccount.google.com/lesssecureapps).
 
-Copy subConfig.ini.default to config.ini and update required settings (probably just email addresses and passwords)
+`cp subConfig.ini.default subConfig.ini` and update required settings (probably just email addresses and passwords)
 
-Copy amass_config.ini.default to amass_config.ini and specify any changes you want to make. This is specifcally for amass
+`cp amass_config.ini.default amass_config.ini` and specify any changes you want to make. This is specifcally for amass
 
 
 Features:
