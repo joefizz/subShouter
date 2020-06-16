@@ -83,7 +83,7 @@ if (sys.argv[1]) == "add":
     # Create symlink from program directory to amass_config.ini file
     os.symlink("../../amass_config.ini", "./programs/"+newProgram+"/config.ini")
     Path("./programs/"+newProgram+"/domains.txt").touch()
-    print(program+" added. Please add root domains to ./programs/"+newProgram+"/domains.txt")
+    print(newProgram+" added. Please add root domains to ./programs/"+newProgram+"/domains.txt")
     with open(programs) as filehandle:
         lines = filehandle.readlines()
     with open(programs, 'w') as filehandle:
