@@ -4,3 +4,4 @@ programs/*
 programs.txt
 resolvers.txt
 25resolvers.txt
+*.swp
