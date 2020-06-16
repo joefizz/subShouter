@@ -29,6 +29,8 @@ source = parser['DNS']['source']
 # /opt/dnsvalidator/dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o ./resolvers.txt && sort -R resolvers.txt | tail -n25 > 25resolvers.txt
 
 def subEnumerate(program):
+    print("Updating resolvers")
+    os.system('curl '+source+' -s | sort -R | tail -n 25 > ./resolvers.txt')
     print("**** Begginning amass enumeration of domains in " + program)
     os.system("amass enum -df ./programs/" + program + "/domains.txt -rf " + resolvers + " -dir ./programs/" + program + " -src -ip -timeout 120")
 
