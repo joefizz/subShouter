@@ -1,0 +1,11 @@
+#Email settings
+[email]
+port = 465
+password = Passowrd1
+sender_email = sender@gmail.com
+receiver_email = receiver@gmail.com
+
+# Local file settings
+[files]
+programs = ./programs.txt
+resolvers = ./25resolvers.txt
