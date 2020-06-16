@@ -11,9 +11,7 @@ This little script is basically a wrapper for amass.  It will run `amass enum` o
 
 The idea is that you add your open cope domains to it and set it to run on a schedule, then just wait for the email to come in with all the new domains.
 
-Setup steps:
-
-amass has default resolvers but we can add more to speed up the process, before running subShouter ensure you create/update the DNS resolvers list by running `./subShouter.py dns`
+### Setup steps:
 
 Create Gmail account and enable insecure applications (https://myaccount.google.com/lesssecureapps).
 
@@ -22,7 +20,7 @@ Create Gmail account and enable insecure applications (https://myaccount.google.
 `cp amass_config.ini.default amass_config.ini` and specify any changes you want to make. This is specifcally for amass
 
 
-Features:
+### Features:
 
 `enum` - starts amass and enumerates all the root domains stored with programs. tracks the changes and sends email alerting to all subdomain changes.
 
@@ -34,7 +32,7 @@ Features:
 
 `dns` - updates the list of DNS resolvers used by amass.
 
-Example:
+### Example:
 
 ```
 ./subShouter.py dns
