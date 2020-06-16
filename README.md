@@ -1,7 +1,11 @@
 
 Setup steps:
 
-First run resolvers.sh to build list of resolvers that amass will use.
+To speed up amass add more resolvers (default is 8, 25 is recommended)
+
+https://github.com/vortexau/dnsvalidator
+
+sort -R resolvers.txt | tail -n25 > 25resolvers.txt
 
 Create Gmail account and enable insecure applciations.
 
