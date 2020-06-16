@@ -13,7 +13,7 @@ receiver_email = receiver@gmail.com
 # Local file settings
 [files]
 programs = ./programs.txt
-resolvers = ./25resolvers.txt
+resolvers = ./resolvers.txt
 
 # DNS updater
 [DNS]
