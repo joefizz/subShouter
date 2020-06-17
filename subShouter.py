@@ -125,3 +125,14 @@ if sys.argv[1] == "dns":
     print("Updating resolvers")
     os.system('curl '+source+' -s | sort -R | tail -n 25 > ./resolvers.txt')
     exit()
+
+if sys.argv[1] == 'email':
+    print("**** sending test email to " + receiver_email)
+    subject = "subShouter test email."
+    msg['Subject'] = "amass results for "
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
+            server.login(sender_email, password)
+            server.sendmail(sender_email, receiver_email, msg.as_string())    
