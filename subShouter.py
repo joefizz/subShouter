@@ -33,7 +33,7 @@ def subEnumerate(program):
 
 def subTrack(program):
     print("**** Beginning amass track for " + program)
-    os.system("amass track -df ./programs/" + program + "/domains.txt -dir ./programs/" + program + "  > ./programs/" + program + "/message.txt")
+    os.system("amass track -df ./programs/" + program + "/domains.txt -dir ./programs/" + program + "  - last 2 > ./programs/" + program + "/message.txt")
 
 def subReport(program):
     print("**** sending results email to " + receiver_email)
