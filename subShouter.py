@@ -37,7 +37,6 @@ def subTrack(program):
 
 def subReport(program):
     print("**** sending results email to " + receiver_email)
-    subject = "amass results for " + program
     fp = open("./programs/" + program + "/message.txt", "r")
     msg = MIMEText(fp.read())
     fp.close()
@@ -46,7 +45,7 @@ def subReport(program):
     msg['To'] = receiver_email
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
-            server.login("subshouter@gmail.com", password)
+            server.login(sender_email, password)
             server.sendmail(sender_email, receiver_email, msg.as_string())
 
 if len(sys.argv) < 2:
@@ -129,7 +128,7 @@ if sys.argv[1] == "dns":
 if sys.argv[1] == 'email':
     print("**** sending test email to " + receiver_email)
     msg = MIMEText("Test email from subSHouter")
-    msg['Subject'] = "amass results for "
+    msg['Subject'] = "Test email from subShouter"
     msg['From'] = sender_email
     msg['To'] = receiver_email
     context = ssl.create_default_context()
