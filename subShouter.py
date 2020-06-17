@@ -128,7 +128,7 @@ if sys.argv[1] == "dns":
 
 if sys.argv[1] == 'email':
     print("**** sending test email to " + receiver_email)
-    subject = "subShouter test email."
+    msg = MIMEText("Test email from subSHouter")
     msg['Subject'] = "amass results for "
     msg['From'] = sender_email
     msg['To'] = receiver_email
