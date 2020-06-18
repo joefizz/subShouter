@@ -29,11 +29,11 @@ def subEnumerate(program):
     print("Updating resolvers")
     os.system('curl '+source+' -s | sort -R | tail -n 25 > ./resolvers.txt')
     print("**** Begginning amass enumeration of domains in " + program)
-    os.system("amass enum -v -df ./programs/" + program + "/domains.txt -rf " + resolvers + " -dir ./programs/" + program + " -src -ip -timeout "+timeout)
+    os.system("amass enum -df ./programs/" + program + "/domains.txt -rf " + resolvers + " -dir ./programs/" + program + " -src -ip -timeout "+timeout)
 
 def subTrack(program):
     print("**** Beginning amass track for " + program)
-    os.system("amass track -v -df ./programs/" + program + "/domains.txt -dir ./programs/" + program + "  - last 2 > ./programs/" + program + "/message.txt")
+    os.system("amass track -df ./programs/" + program + "/domains.txt -dir ./programs/" + program + " > ./programs/" + program + "/message.txt")
 
 def subReport(program):
     print("**** sending results email to " + receiver_email)
